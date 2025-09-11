@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            background-color: #00bfff;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #009acd;
+        }
+
+        #scores {
+            font-size: 24px;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        div {
+            justify-content: space-between;
+            margin-top: 10px;
+            padding: 8px;
+            background-color: #e2f4f4;
+            border-radius: 4px;
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+    </style>
+
+    <title>Dice Roll Game</title>
+</head>
+<body>
+    <h1>Dice Roll Simulator</h1>
+    <button id="button" onclick="dice()">Roll Dice</button>
+    <p id="diceScore"></p>
+    <p id="scores"></p>
+    <div id="container"></div>
+
+    <script>
+        let diceScore = document.getElementById('diceScore');
+        const button = document.getElementById('button');
+        const scores = document.getElementById('scores');
+        const container = document.getElementById('container');
+        const imageContainer = document.getElementById('imageContainer');
+
+
+
+        function randomDiceNum (max) {
+            return Math.floor(Math.random() * max + 1);
+        };
+        const images = [
+            'images/1.png',
+            'images/2.png',
+            'images/3.png',
+            'images/4.png',
+            'images/5.png',
+            'images/6.png'
+        ]
+
+        let counter = 0;
+        function dice () {
+           const diceRolledNum = randomDiceNum(6);
+           counter++;
+           if(diceRolledNum === 1){
+               scores.innerHTML = `<img src="${images[0]}" alt="1" width = '100px'>`;
+           } else if(diceRolledNum === 2) {
+               scores.innerHTML = `<img src="${images[1]}" alt="2" width = '100px'>`;
+           } else if(diceRolledNum === 3){
+               scores.innerHTML = `<img src="${images[2]}" alt="3" width = '100px'>`;
+           } else if(diceRolledNum === 4) {
+               scores.innerHTML = `<img src="${images[3]}" alt="4" width = '100px'>`;
+            } else if(diceRolledNum === 5) {
+               scores.innerHTML = `<img src="${images[4]}" alt="5" width = '100px'>`;
+           } else {
+               scores.innerHTML = `<img src="${images[5]}" alt="6" width = '100px'>`;
+           }
+
+
+             //scores.innerHTML = diceRolledNum + images[0];
+            const divElement = document.createElement('p');
+            divElement.textContent = ' Roll ' + counter + ": " + diceRolledNum;
+            container.prepend(divElement);
+        }
+
+
+
+
+    </script>
+</body>
+</html>

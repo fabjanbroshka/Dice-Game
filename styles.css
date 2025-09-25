@@ -1,0 +1,51 @@
+body {
+    background-color: #f0f8ff;
+    text-align: center;
+    padding: 30px;
+}
+
+h1 {
+    color: #333;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    background-color: #00bfff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #009acd;
+}
+
+#scores {
+    font-size: 24px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #222;
+}
+
+div {
+    padding: 8px;
+    border-radius: 4px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#frequencyContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e2f4f4;
+}
+.frequencies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1rem;
+    height: 100px;
+}

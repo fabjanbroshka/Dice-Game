@@ -5,60 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <style>
-        body {
-            background-color: #f0f8ff;
-            text-align: center;
-            padding: 30px;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        button {
-            padding: 10px;
-            font-size: 16px;
-            border: none;
-            background-color: #00bfff;
-            color: white;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #009acd;
-        }
-
-        #scores {
-            font-size: 24px;
-            margin-top: 20px;
-            font-weight: bold;
-            color: #222;
-        }
-
-        div {
-            padding: 8px;
-            border-radius: 4px;
-            width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        #frequencyContainer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #e2f4f4;
-        }
-        .frequencies {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 1rem;
-            height: 100px;
-        }
-    </style>
     <title>Dice Roll Game</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Dice Roll Simulator</h1>
@@ -67,81 +15,6 @@
     <p id="scores"></p>
     <div id="frequencyContainer"></div>
     <div id="container"></div>
-    <script>
-        const diceScore = document.getElementById('diceScore');
-        const button = document.getElementById('button');
-        const scores = document.getElementById('scores');
-        const container = document.getElementById('container');
-        const imageContainer = document.getElementById('imageContainer');
-        const frequencyContainer = document.getElementById('frequencyContainer');
-
-        const frequencyDivOne = document.createElement('div');
-        frequencyContainer.append(frequencyDivOne);
-        frequencyDivOne.classList.add('frequencies')
-        const frequencyDivTwo = document.createElement('div');
-        frequencyContainer.append(frequencyDivTwo);
-        frequencyDivTwo.classList.add('frequencies')
-        const frequencyDivThree = document.createElement('div');
-        frequencyContainer.append(frequencyDivThree);
-        frequencyDivThree.classList.add('frequencies')
-        const frequencyDivFour = document.createElement('div');
-        frequencyContainer.append(frequencyDivFour);
-        frequencyDivFour.classList.add('frequencies')
-        const frequencyDivFive = document.createElement('div');
-        frequencyContainer.append(frequencyDivFive);
-        frequencyDivFive.classList.add('frequencies')
-        const frequencyDivSix = document.createElement('div');
-        frequencyContainer.append(frequencyDivSix);
-        frequencyDivSix.classList.add('frequencies')
-
-
-        function randomDiceNum (max) {
-            return Math.floor(Math.random() * max + 1);
-        };
-        const images = [
-            'images/1.png',
-            'images/2.png',
-            'images/3.png',
-            'images/4.png',
-            'images/5.png',
-            'images/6.png'
-        ]
-
-        let counter = 0;
-        let frequency1 = 0;
-        let frequency2 = 0;
-        let frequency3 = 0;
-        let frequency4 = 0;
-        let frequency5 = 0;
-        let frequency6 = 0;
-        function dice () {
-           const diceRolledNum = randomDiceNum(6);
-           counter++;
-           if(diceRolledNum === 1){
-               scores.innerHTML = `<img src="${images[0]}" alt="1" width="100px">`
-               frequencyDivOne.innerHTML  =`<div><img src="${images[0]}" alt="1" width="20px"><p>${++frequency1}</p></div>`;
-           } else if(diceRolledNum === 2) {
-               scores.innerHTML = `<img src="${images[1]}" alt="1" width="100px">`
-               frequencyDivTwo.innerHTML  =`<div><img src="${images[1]}" alt="2" width="20px"><p>${++frequency2}</p></div>`;
-           } else if(diceRolledNum === 3){
-               scores.innerHTML = `<img src="${images[2]}" alt="1" width="100px">`
-               frequencyDivThree.innerHTML  =`<div><img src="${images[2]}" alt="2" width="20px"><p>${++frequency3}</p></div>`;
-           } else if(diceRolledNum === 4) {
-               scores.innerHTML = `<img src="${images[3]}" alt="1" width="100px">`
-               frequencyDivFour.innerHTML  =`<div><img src="${images[3]}" alt="2" width="20px"><p>${++frequency4}</p></div>`;
-            } else if(diceRolledNum === 5) {
-               scores.innerHTML = `<img src="${images[4]}" alt="1" width="100px">`
-               frequencyDivFive.innerHTML  =`<div><img src="${images[4]}" alt="2" width="20px"><p>${++frequency5}</p></div>`;
-           } else {
-               scores.innerHTML = `<img src="${images[5]}" alt="1" width="100px">`
-               frequencyDivSix.innerHTML  =`<div><img src="${images[5]}" alt="2" width="20px"><p>${++frequency6}</p></div>`;
-           }
-
-            const divElement = document.createElement('p');
-            divElement.textContent = ' Roll ' + counter + ": " + diceRolledNum;
-            container.prepend(divElement);
-        }
-
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>
